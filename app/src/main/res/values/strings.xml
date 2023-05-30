@@ -5,4 +5,26 @@
     <string name="uob">UOB</string>
     <string name="myanmar">Myanmar</string>
     <string name="english">English</string>
+
+    <string name="engChoose">English is chosen</string>
+    <string name="mmChoose">မြန်မာဘာသာအားရွေးချယ်ထားပါသည်။</string>
+    <string name="dbsMM">ဒီဘီအက်စ်</string>
+    <string name="ocbcMM">အိုစီဘီစီ</string>
+    <string name="uobMM">ယူအိုဘီ</string>
+    <string name="error">Error translation</string>
+
+    <string name="dbsWeb">https://www.dbs.com.sg</string>
+    <string name="ocbcWeb">https://www.ocbc.com</string>
+    <string name="uobWeb">https://www.uob.com.sg</string>
+
+    <string name="dbsPh">18001111111</string>
+    <string name="ocbcPh">18003633333</string>
+    <string name="uobPh">18002222121</string>
+
+    <string name="visit">Visit Website</string>
+    <string name="contact">Contact the bank</string>
+    <string name="setFav">Add to favorites</string>
+
+    <string name="addFav">Added to favorites</string>
+    <string name="removeFav">Removed from favorites</string>
 </resources>

@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
                                     ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
 
-        menu.add(0, 0, 0, "Visit Website");
-        menu.add(0, 1, 1, "Contact the bank");
-        menu.add(0, 2, 2, "Toggle favourite");
+        menu.add(0, 0, 0, getString(R.string.visit));
+        menu.add(0, 1, 1, getString(R.string.contact));
+        menu.add(0, 2, 2, getString(R.string.setFav));
         if (v == tvDBS) {
             wordClicked = "DBS";
         } else if (v == tvOCBC) {
@@ -65,21 +65,21 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.EnglishSelection) {
-            Toast.makeText(MainActivity.this, "English is chosen", Toast.LENGTH_SHORT).show();
-            tvDBS.setText("DBS");
-            tvOCBC.setText("OCBC");
-            tvUOB.setText("UOB");
+            Toast.makeText(MainActivity.this, getString(R.string.engChoose), Toast.LENGTH_SHORT).show();
+            tvDBS.setText(getString(R.string.dbs));
+            tvOCBC.setText(getString(R.string.ocbc));
+            tvUOB.setText(getString(R.string.uob));
             return true;
         } else if (id == R.id.myanmarSelection) {
-            Toast.makeText(MainActivity.this, "မြန်မာဘာသာအားရွေးချယ်ထားပါသည်။", Toast.LENGTH_SHORT).show();
-            tvDBS.setText("ဒီဘီအက်စ်");
-            tvOCBC.setText("အိုစီဘီစီ");
-            tvUOB.setText("ယူအိုဘီ");
+            Toast.makeText(MainActivity.this, getString(R.string.mmChoose), Toast.LENGTH_SHORT).show();
+            tvDBS.setText(getString(R.string.dbsMM));
+            tvOCBC.setText(getString(R.string.ocbcMM));
+            tvUOB.setText(getString(R.string.uobMM));
             return true;
         } else {
-            tvDBS.setText("Error translation");
-            tvOCBC.setText("Error translation");
-            tvUOB.setText("Error translation");
+            tvDBS.setText(getString(R.string.error));
+            tvOCBC.setText(getString(R.string.error));
+            tvUOB.setText(getString(R.string.error));
         }
 
         return super.onOptionsItemSelected(item);
@@ -89,12 +89,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item) {
         if (wordClicked =="DBS") {
             if (item.getItemId() == 0) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.dbs.com.sg"));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.dbsWeb)));
                 startActivity(intent);
 
                 return true; //menu item successfully handled
             } else if (item.getItemId() == 1) {
-                Intent intentCall = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "18001111111"));
+                Intent intentCall = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + getString(R.string.dbsPh)));
                 startActivity(intentCall);
 
                 return true;  //menu item successfully handled
@@ -105,12 +105,12 @@ public class MainActivity extends AppCompatActivity {
             }
         } if (wordClicked == "OCBC") {
             if (item.getItemId() == 0) {
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.ocbc.com"));
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.ocbcWeb)));
                 startActivity(intent);
 
                 return true; //menu item successfully handled
             } else if (item.getItemId() == 1) {
-                Intent intentCall = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "18003633333"));
+                Intent intentCall = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + getString(R.string.ocbcPh)));
                 startActivity(intentCall);
 
                 return true;  //menu item successfully handled
@@ -121,12 +121,12 @@ public class MainActivity extends AppCompatActivity {
             }
         } if (wordClicked == "UOB") {
                 if (item.getItemId() == 0) {
-                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.uob.com.sg"));
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.uobWeb)));
                     startActivity(intent);
 
                     return true; //menu item successfully handled
                 } else if (item.getItemId() == 1) {
-                    Intent intentCall = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "18002222121"));
+                    Intent intentCall = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + getString(R.string.uobPh)));
                     startActivity(intentCall);
 
                     return true;  //menu item successfully handled
@@ -143,10 +143,10 @@ public class MainActivity extends AppCompatActivity {
     private void checkFav(TextView tv,Boolean b){
         if(b==true){
             tv.setTextColor((Color.parseColor("#FF0000")));
-            Toast.makeText(MainActivity.this, "Added to favorites", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, getString(R.string.addFav), Toast.LENGTH_SHORT).show();
         }else{
             tv.setTextColor((Color.parseColor("#000000")));
-            Toast.makeText(MainActivity.this, "Removed favorites", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, getString(R.string.removeFav), Toast.LENGTH_SHORT).show();
 
         }
     }
